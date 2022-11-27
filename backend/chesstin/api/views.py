@@ -36,14 +36,38 @@ def csvContent(request):
     response['Content-Disposition']= 'atachment; filename=submissions.csv'
     writer = csv.writer(response)
     writer.writerow(['fName',
-                     'lName','email','yearInSchool','elo',
-                     'lichessUsername','motivation','workshop'])
+                     'lName','email',
+                     'origin','elo',
+                     'motivation'])
     submissionList = submissions.values_list('firstName','lastName','email',
-                                         'yearInSchool','elo','lichessUsername',
-                                         'motivation','workshops'
+                                         'origin','elo',
+                                         'motivation',
                                          )
 
     for sub in submissionList:
         writer.writerow(sub)
 
     return response
+
+
+
+
+
+# @api_view(['GET'])
+# def csvContent(request):
+#     submissions = Submission.objects.all()
+#     response = HttpResponse('text/csv')
+#     response['Content-Disposition']= 'atachment; filename=submissions.csv'
+#     writer = csv.writer(response)
+#     writer.writerow(['fName',
+#                      'lName','email','yearInSchool','elo',
+#                      'lichessUsername','motivation','workshop'])
+#     submissionList = submissions.values_list('firstName','lastName','email',
+#                                          'yearInSchool','elo','lichessUsername',
+#                                          'motivation','workshops'
+#                                          )
+#
+#     for sub in submissionList:
+#         writer.writerow(sub)
+#
+#     return response
