@@ -5,7 +5,7 @@ import closeMenu from '../../assets/close-menu.png'
 import arrow from '../../assets/arrow.png'
 export const Nav = () => {
   return (
-    <section className='bg-iblack'>
+    <section >
     <nav>
         <div className='upper'>
             <img src={logo}></img>

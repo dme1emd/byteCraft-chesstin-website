@@ -2,6 +2,14 @@
   font-family:wadik;
   src: url('./assets/Wadik.otf');
 }
+@font-face {
+  font-family:gilroybold;
+  src: url('./assets/Gilroy-ExtraBold.otf');
+}
+@font-face {
+  font-family:gilroylight;
+  src: url('./assets/Gilroy-Light.otf');
+}
 *{
   margin:0;
   padding: 0%;

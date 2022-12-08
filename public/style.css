@@ -563,6 +563,12 @@ video {
   width: 100%;
 }
 
+@media (min-width: 300px) {
+  .container {
+    max-width: 300px;
+  }
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -633,6 +639,10 @@ video {
   grid-template-columns: repeat(10, minmax(0, 1fr));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .break-normal {
   overflow-wrap: normal;
   word-break: normal;
@@ -682,10 +692,28 @@ video {
   color: rgb(253 52 52 / var(--tw-text-opacity));
 }
 
+@font-face {
+  font-family:wadik;
+
+  src: url('./assets/Wadik.otf');
+}
+
+@font-face {
+  font-family:gilroybold;
+
+  src: url('./assets/Gilroy-ExtraBold.otf');
+}
+
+@font-face {
+  font-family:gilroylight;
+
+  src: url('./assets/Gilroy-Light.otf');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue','Wadik','Gilroy-ExtraBold','Gilroy-Light',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -696,75 +724,83 @@ code {
     monospace;
 }
 
-@media (min-width: 640px) {
-  .sm\:col-span-8 {
+@media (min-width: 300px) {
+  .xs\:col-span-8 {
     grid-column: span 8 / span 8;
   }
 
-  .sm\:col-start-2 {
+  .xs\:col-start-2 {
     grid-column-start: 2;
   }
 
-  .sm\:col-start-4 {
+  .xs\:col-start-4 {
     grid-column-start: 4;
   }
 
-  .sm\:col-start-3 {
-    grid-column-start: 3;
-  }
-
-  .sm\:col-start-5 {
+  .xs\:col-start-5 {
     grid-column-start: 5;
   }
 
-  .sm\:col-end-3 {
+  .xs\:col-end-3 {
     grid-column-end: 3;
   }
 
-  .sm\:col-end-10 {
+  .xs\:col-end-10 {
     grid-column-end: 10;
   }
 
-  .sm\:col-end-5 {
+  .xs\:col-end-5 {
     grid-column-end: 5;
   }
 
-  .sm\:col-end-9 {
+  .xs\:col-end-9 {
     grid-column-end: 9;
   }
 
-  .sm\:row-start-2 {
+  .xs\:row-start-2 {
     grid-row-start: 2;
   }
 
-  .sm\:pt-10 {
+  .xs\:pt-10 {
     padding-top: 2.5rem;
   }
 
-  .sm\:pb-10 {
+  .xs\:pb-10 {
     padding-bottom: 2.5rem;
   }
 
-  .sm\:pt-5 {
+  .xs\:pt-5 {
     padding-top: 1.25rem;
   }
 
-  .sm\:text-start {
+  .xs\:text-center {
+    text-align: center;
+  }
+
+  .xs\:text-start {
     text-align: start;
   }
 
-  .sm\:text-end {
-    text-align: end;
+  .xs\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
-  .sm\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
+  .xs\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
-  .sm\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+  .sm\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 
@@ -781,10 +817,6 @@ code {
     grid-column-start: 4;
   }
 
-  .md\:col-start-5 {
-    grid-column-start: 5;
-  }
-
   .md\:col-start-6 {
     grid-column-start: 6;
   }
@@ -793,16 +825,12 @@ code {
     grid-column-end: 4;
   }
 
-  .md\:col-end-5 {
-    grid-column-end: 5;
+  .md\:col-end-6 {
+    grid-column-end: 6;
   }
 
   .md\:col-end-10 {
     grid-column-end: 10;
-  }
-
-  .md\:col-end-6 {
-    grid-column-end: 6;
   }
 
   .md\:row-start-1 {
@@ -811,6 +839,10 @@ code {
 
   .md\:pt-0 {
     padding-top: 0px;
+  }
+
+  .md\:pl-12 {
+    padding-left: 3rem;
   }
 
   .md\:pt-20 {
@@ -825,6 +857,10 @@ code {
     text-align: start;
   }
 
+  .md\:text-end {
+    text-align: end;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -837,6 +873,10 @@ code {
 }
 
 @media (min-width: 1024px) {
+  .lg\:col-start-5 {
+    grid-column-start: 5;
+  }
+
   .lg\:col-start-3 {
     grid-column-start: 3;
   }
@@ -862,6 +902,10 @@ code {
 }
 
 @media (min-width: 1280px) {
+  .xl\:col-start-5 {
+    grid-column-start: 5;
+  }
+
   .xl\:col-start-6 {
     grid-column-start: 6;
   }
@@ -870,8 +914,12 @@ code {
     grid-column-end: 6;
   }
 
-  .xl\:text-center {
-    text-align: center;
+  .xl\:pl-4 {
+    padding-left: 1rem;
+  }
+
+  .xl\:text-start {
+    text-align: start;
   }
 
   .xl\:text-6xl {
@@ -879,15 +927,23 @@ code {
     line-height: 1;
   }
 
-  .xl\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
+  .xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:col-end-5 {
-    grid-column-end: 5;
+  .\32xl\:col-end-6 {
+    grid-column-end: 6;
+  }
+
+  .\32xl\:pl-0 {
+    padding-left: 0px;
+  }
+
+  .\32xl\:pl-5 {
+    padding-left: 1.25rem;
   }
 
   .\32xl\:text-3xl {
