@@ -1,13 +1,70 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Wadik;
+    src: url("/fonts/Wadik.otf") ;
+    }
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: normal;
+    src: url("/fonts/Gilroy-Regular.ttf"); 
+    }
+
+@font-face {
+    font-family: Gilroy;
+    font-weight: medium;
+    src: url("/fonts/Gilroy-Medium.ttf");
+    
+    }
+    
+:root {
+    --insta-black: #000000;
+    --insta-white: #F5F5F5;
+    --rouge-brick: #FD3434;
+    --brow-coffee: #887367;
+    --std-line-height: 175.78px;
+  }
+
+::placeholder{
+    color: #BBBBBB !important;
 }
 
+html{
+    margin: 0;
+    padding: 0;
+    background-color: var(--insta-black);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+select{
+    outline: none;
+    box-shadow: none;
+    font-size: 1.3rem;
+    width: 75vw;
+    padding: 1rem 0rem 1rem .5em;
+    background-color: rgb(143, 142, 142);
+    border-top: solid 2px var(--rouge-brick);
+    font-family: Wadik;
+}
+
+select option{
+    font-family: wadik;
+    font-size: 1em;
 }
