@@ -1,20 +1,21 @@
 import './App.css';
-import { About } from './components/sections/About';
-import { Collab } from './components/sections/Collab';
-import { Nav } from './components/sections/Nav';
-import { Speakers } from './components/sections/Speakers';
-import { Sponsors } from './components/sections/Sponsors';
+import { Nav } from '../sections/Nav';
 import './index.css'
 function App() {
   return (
     <div className="App">
       <Nav/>
-      <main>
-      <About/>
-      <Collab/>
-      <Speakers/>
-      <Sponsors/>
-      </main>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/register' element={<Register phase={'main'} />}></Route>
+        <Route path='/register/info' element={<Register phase={'info'} />}></Route>
+        <Route path='/register/contact' element={<Register phase={'contact'} />}></Route>
+        <Route path='/register/competition' element={<Register phase={'competition'} />}></Route>
+        <Route path='/register/chess' element={<Register phase={'chess'} />}></Route>
+        <Route path='/register/chesstin' element={<Register phase={'chesstin'} />}></Route>\
+        <Route path='/register/presence' element={<Register phase={'presence'} />}></Route>
+        <Route path='/register/thank-you' element={<Register phase={'thank-you'} />}></Route>
+      </Routes>
     </div>
   );
 }
